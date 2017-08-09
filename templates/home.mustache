@@ -21,28 +21,35 @@
   <body>
     <div class="container">
       <form class="" action="/search" method="get">
-         <input type="search" name="title" placeholder="Search...">
+         <input class="search" type="search" name="title" placeholder="Search...">
          <button type="submit">GO</button>
       </form>
-      
-      {{#books}}
-      <div class="col-md-4">
-        <div class="book-panel">
-          <h2>{{title}}</h2>
-          <ul class='categories'>
-            <li>Category 1</li>
-            <li>Category 2</li>
-          </ul>
-          <p class="authors">Author 1, Author 2</p>
-          <p class="year">{{editor}}, {{year}}</p>
-          <p class="price">{{prices}}</p>
-        </div>
-      </div>  
-      {{/books}}
+    
+      <div class='books'>
+        {{#books}}
+        <div class="col-md-4">
+          <div class="book-panel">
+            <h2>{{title}}</h2>
+            <ul class='categories'>
+              <li>Category 1</li>
+              <li>Category 2</li>
+            </ul>
+            <p class="authors">Author 1, Author 2</p>
+            <p class="year">{{editor}}, {{year}}</p>
+            <p class="price">{{prices}}</p>
+          </div>
+        </div>  
+        {{/books}}
+      </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="/main.js" charset="utf-8"></script>
   </body>
 </html>
+
+
+
+

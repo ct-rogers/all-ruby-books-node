@@ -30,7 +30,7 @@ app.get('/search', (request, response) => {
             console.log('error', error)
             /* Log this error to another database */
             /* Third party apss to track errors */
-            response.render('error')            
+            response.render('error')
           })
 })
 
