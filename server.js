@@ -14,7 +14,7 @@ app.set('views', './templates')
 app.set('view engine', 'mustache')
 
 app.get('/', (request, response) => {
-  response.send('hello-world')
+  response.render('home')
 })
 
 app.listen(3000, () => {
