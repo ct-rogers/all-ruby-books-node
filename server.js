@@ -24,7 +24,7 @@ app.get('/search', (request, response) => {
   database.any('SELECT * FROM "books" where "title" LIKE $(pattern)',
                 { pattern: `%${title}%` })
           .then((books) => {
-            response.render('home', { books: books })
+            response.render('search', { books: books })
           })
           .catch((error) => {
             console.log('error', error)
