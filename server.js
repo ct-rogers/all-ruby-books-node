@@ -14,7 +14,16 @@ app.set('views', './templates')
 app.set('view engine', 'mustache')
 
 app.get('/', (request, response) => {
-  response.render('home')
+  database.any('SELECT * FROM "books"')
+    .then((books) => {
+      response.render('home', { books: books })
+    })
+    .catch(error => {
+      console.log('error', error)
+      /* Log this error to another database */
+      /* Third party apss to track errors */
+      response.render('error')
+    })
 })
 
 app.listen(3000, () => {
